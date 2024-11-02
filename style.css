@@ -1,0 +1,783 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #3498db, #000000); /* Gradient background */
+    color: #ffffff; /* Text color */
+}
+
+/* Header Styles */
+header {
+    color: #ecf0f1; /* Light text color */
+    padding: 5px; /* Padding for header */
+    text-align: center; /* Center text */
+    position:absolute; /* Fixed position for scrolling effect */
+    width: 100%; /* Full width */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it’s above other content */
+    transition: background 0.3s ease; /* Transition for background color */
+}
+
+/* Navbar Styles */
+nav {
+    margin-top: 10px; /* Margin above nav */
+    margin-right: 30px;
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content:right; /* Center items */
+}
+
+nav ul li {
+    margin: 0 15px; /* Spacing between items */
+}
+
+nav ul li a {
+    color: #ecf0f1; /* Link color */
+    font-size: 1.1em; /* Slightly larger font size */
+    padding: 10px 15px; /* Padding around links */
+    border-radius: 5px; /* Rounded corners for links */
+    display: inline-block; /* Block for padding and hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animation for links */
+}
+
+/* 3D Hover Effect */
+nav ul li a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(236, 240, 241, 0.2); /* Light background on hover */
+    transform: translateY(-5px) rotateY(5deg) scale(1.05); /* Lift and tilt on hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+}
+
+
+/* Home Section Styles */
+#home {
+    color: #fff; /* White text */
+    text-align: center; /* Center text */
+    padding: 150px 20px; /* Padding for the section */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for vertical centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative;
+    perspective: 1000px; /* For 3D effect */
+}
+
+#home-content h1 {
+    font-size: 3em; /* Large font size for heading */
+    margin-bottom: 20px; /* Space below heading */
+    transform: rotateY(0deg); /* Initial rotation for 3D */
+    transition: transform 0.5s ease; /* Smooth transition */
+    animation: bounce 5s infinite alternate; /* Bounce effect for the header */
+
+}
+
+#home-content h1:hover {
+
+    transform: rotateY(15deg) translateZ(30px); /* Rotate and push forward on hover */
+}
+
+#home-content span {
+    color: #f39c12; /* Highlighted color for name */
+    display: inline-block; /* Inline block for 3D effect */
+    transform: rotateX(0deg); /* Initial rotation */
+    transition: transform 0.5s ease; /* Smooth transition */
+    animation: bounce 5s infinite alternate; /* Bounce effect for the header */
+
+}
+
+#home-content span:hover {
+    transform: rotateX(15deg) translateZ(30px); /* Rotate and push forward on hover */
+}
+
+#home-content p {
+    font-size: 1.2em; /* Medium font size for paragraph */
+    margin-bottom: 30px; /* Space below paragraph */
+    transform: rotateX(0deg); /* Initial rotation */
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+#home-content p:hover {
+    transform: rotateX(10deg) translateZ(20px); /* Rotate and push forward on hover */
+}
+
+/* 3D Button Style */
+.btn-3d {
+    width: 15%;
+    display: inline-block; /* Block for button size */
+    padding: 15px 30px; /* Padding for button */
+    background: #f39c12; /* Button color */
+    color: #fff; /* Text color */
+    font-size: 1.2em; /* Font size for button */
+    border-radius: 30px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for animation */
+    transform: translateZ(0); /* Flat initial state */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+}
+
+.btn-3d:hover {
+    text-decoration: none;
+    transform: translateZ(20px) rotateX(10deg) rotateY(-5deg); /* Lift and tilt on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #home-content h1 {
+        font-size: 2.5em; /* Adjust heading size for smaller screens */
+    }
+
+    #home-content p {
+        font-size: 1.1em; /* Adjust paragraph size for smaller screens */
+    }
+
+    .btn-3d {
+        font-size: 1em; /* Adjust button size for smaller screens */
+        padding: 12px 25px; /* Adjust padding */
+    }
+}
+
+
+
+/* About Section Styles */
+#about {
+    color: white;
+    padding: 100px 20px; /* Padding for the section */
+    text-align: center; /* Center-align the text */
+    perspective: 1000px; /* Set perspective for 3D effects */
+}
+
+.about-container {
+    max-width: 1200px; /* Maximum width for the content */
+    margin: 0 auto; /* Center the content */
+    margin-bottom: 8%;
+   
+}
+
+h2 {
+    font-size: 2.5em; /* Font size for heading */
+    margin-bottom: 50px; /* Space below heading */
+    
+}
+
+.about-content {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space out text and image */
+    align-items: center; /* Align vertically */
+    gap: 30px; /* Spacing between text and image */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    margin-top: 50px;
+}
+
+/* About Text Section */
+.about-text {
+    flex: 1; /* Take up available space */
+    font-size: 1.2em; /* Font size for text */
+    color: #ffffff; /* Text color */
+    transform: rotateX(0deg); /* Initial rotation */
+    transition: transform 0.4s ease; /* Smooth 3D transition */
+    text-align: justify;
+}
+
+.about-text:hover {
+    transform: rotateX(10deg) translateZ(20px); /* 3D lift on hover */
+}
+
+/* About Image Section */
+.about-image {
+    flex: 1; /* Take up available space */
+    text-align: center; /* Center image */
+}
+
+.about-image img {
+    width: 100%; /* Make the image responsive */
+    max-width: 400px; /* Maximum width for image */
+    border-radius: 15px; /* Rounded corners for image */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth 3D transition */
+    transform: rotateY(0deg); /* Initial rotation */
+}
+
+.about-image img:hover {
+    transform: rotateY(15deg) translateZ(30px); /* 3D rotation and lift on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Deepen shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack text and image vertically */
+    }
+
+    h2 {
+        font-size: 2em; /* Smaller heading on mobile */
+        
+    }
+
+    .about-text {
+        font-size: 1.1em; /* Smaller text on mobile */
+    }
+}
+
+
+
+
+.skills-container {
+    width: 30%;
+    margin: 40px auto;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 3px solid white;
+    text-align: center;
+}
+.professional-skills{
+    width: 30%;
+    margin: 40px auto;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 3px solid white;
+    text-align: center;
+}
+
+/* Section Titles */
+.skills-container h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #222;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.skills-container h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #00c6ff;
+    margin: 10px auto 0;
+}
+.professional-skills h2{
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #222;
+    margin-bottom: 40px;
+    position: relative;
+}
+.professional-skills h2::after{
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color:#00c6ff;
+    margin: 10px auto 0;
+}
+/* Skill Bars Container */
+.skill {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Skill Labels */
+.skill p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.skill:hover p {
+    color: #00c6ff;
+}
+
+/* Skill Bar Background */
+.skill-bar {
+    position: relative;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill Progress Bar */
+.progress {
+    height: 100%;
+    line-height: 28px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    padding-right: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    transition: width 2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover Effect for Skill Bars */
+.skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+
+.skill:hover .skill-bar::before {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Progress Bar Animation */
+@keyframes growSkill {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: inherit;
+    }
+}
+
+/* Different Skill Progress Colors */
+.html-skill {
+    width: 90%;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    animation: growSkill 2s ease;
+}
+
+.css-skill {
+    width: 85%;
+    background: linear-gradient(90deg, #1d976c, #93f9b9);
+    animation: growSkill 2.2s ease;
+}
+
+.js-skill {
+    width: 80%;
+    background: linear-gradient(90deg, #f7971e, #ffd200);
+    animation: growSkill 2.4s ease;
+}
+
+.python-skill {
+    width: 75%;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    animation: growSkill 2.6s ease;
+}
+
+.management-skill {
+    width: 90%;
+    background: linear-gradient(90deg, #f953c6, #b91d73);
+    animation: growSkill 2.8s ease;
+}
+
+.communication-skill {
+    width: 85%;
+    background: linear-gradient(90deg, #f09819, #ff512f);
+    animation: growSkill 3s ease;
+}
+
+.teamwork-skill {
+    width: 80%;
+    background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+    animation: growSkill 3.2s ease;
+}
+
+.problem-solving-skill {
+    width: 88%;
+    background: linear-gradient(90deg, #16bffd, #cb3066);
+    animation: growSkill 3.4s ease;
+}
+
+/* Experience Section Styles */
+#experience {
+    padding: 100px 20px;
+    text-align: center;
+    perspective: 1000px; /* Perspective for 3D effects */
+}
+
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    
+}
+
+/* Experience Card Style */
+.experience-card {
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d; /* Ensures 3D transforms are applied */
+    transform: rotateY(0deg); /* Initial state */
+    border: 3px rgb(255, 255, 255) solid;
+}
+
+.experience-card h3 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.experience-card p {
+    font-size: 1em;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Hover Effect for 3D Animation */
+.experience-card:hover {
+    transform: rotateY(15deg) translateZ(20px); /* 3D rotation and translation */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-card {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+
+
+/* Projects Section Styles */
+#projects {
+    padding: 120px 20px;
+    text-align: center;
+    perspective: 1200px; /* Perspective for 3D effects */
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    z-index: 1;
+    
+}
+
+h2 {
+    font-size: 2.8em;
+    color: #2c3e50;
+    margin-bottom: 60px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.projects-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Project Card Style */
+.project-card {
+    padding: 50px 30px;
+    border: 3px solid white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover::before {
+    transform: translateX(30px) rotate(15deg);
+}
+
+.project-card h3 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #ffffff;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.project-card .project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card:hover .project-link {
+    background-color: #ff0000;
+}
+
+/* Hover Effect for 3D Animation */
+.project-card:hover {
+    transform: rotateY(15deg) translateZ(30px); /* 3D effect */
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+}
+
+.project-card:hover h3 {
+    color: #f10202;
+}
+
+.project-card:hover p {
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        padding: 40px 20px;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+}
+.container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    perspective: 1000px;  /* Perspective for 3D effects */
+    margin-bottom: 8%;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for 3D animation */
+}
+
+h2:hover {
+    text-shadow: 2px 1px 1px rgb(0, 0, 0);
+    transform: rotateY(20deg) rotateX(10deg); /* 3D tilt effect on hover */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+input, textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input:hover, textarea:hover {
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+}
+
+#response-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #28a745;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Fade-in animation for response message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Footer Styles */
+#footer {
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    perspective: 1200px; /* Perspective for 3D effects */
+    position: relative; /* For positioning inner elements */
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease; /* Fade-in animation for footer */
+}
+
+.footer-container h3 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+    animation: bounce 1s infinite alternate; /* Bounce effect for the header */
+}
+
+.footer-container p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #bdc3c7;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: #2980b9; /* Button color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative; /* Position for hover effect */
+}
+
+/* Hover Effect for Social Links */
+.social-links a:hover {
+    text-decoration: none;
+    color: white;
+    transform: translateY(-10px) rotateY(10deg) scale(1.05); /* Translation, rotation, and scaling for 3D effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow effect */
+    background: #3498db; /* Brighter color on hover */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slide up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container h3 {
+        font-size: 1.8em;
+    }
+
+    .footer-container p {
+        font-size: 0.9em;
+    }
+
+    .social-links a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
+.back-to-top {
+    position: fixed; /* Fixed position */
+    bottom: 30px; /* Distance from the bottom */
+    right: 30px; /* Distance from the right */
+    background-color: #ff0000; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding around the button */
+    font-size: 1.2em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: none; /* Hidden by default */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+/* Show the button when hovered */
+.back-to-top:hover {
+    background-color: #6dd5ed; /* Change background on hover */
+}
+
